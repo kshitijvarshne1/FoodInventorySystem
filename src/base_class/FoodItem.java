@@ -8,5 +8,19 @@
 package base_class;
 
 public class FoodItem {
+    private int itemCode;
+    private String itemName;
+    private float itemPrice;
+    private int quantityInStock;
+    private float itemCost;
+
+    public FoodItem(int itemCode, String itemName, float itemPrice, int quantityInStock, float itemCost) {
+        this.itemCode = itemCode;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.quantityInStock = quantityInStock;
+        this.itemCost = itemCost;
+    }
+
 }
 

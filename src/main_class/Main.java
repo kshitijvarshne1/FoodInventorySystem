@@ -22,28 +22,36 @@ public class Main {
             switch (input) {
                 case 1:
                     System.out.println("Do you wish to add a fruit(f), vegetable(v), sweeteners(s) or a preserve(p) ?");
-                    char choice = sc.next().charAt(0);
-                    switch (choice) {
-                        case 'f':
-                            FruitItem ft = new FruitItem();
-                            iv.addItem(ft.addItem());
-                            break;
-                        case 'v':
-                            Vegetables veg = new Vegetables();
-                            iv.addItem(veg.addItem());
-                            break;
-                        case 's':
-                            Sweeteners se = new Sweeteners();
-                            iv.addItem((Sweeteners) se.addItem());
-                            break;
-                        case 'p':
-                            Preserve pe = new Preserve();
-                            iv.addItem((Preserve) pe.addItem());
-                            break;
-                        default:
-                            break;
+                    char choice = 0;
+                    try {
+                        choice = sc.next().charAt(0);
+                    } catch (Exception e) {
+                        System.out.println("Invalid");
                     }
-
+                    if (choice == 'f' || choice == 'v' || choice == 's' || choice == 'p') {
+                        switch (choice) {
+                            case 'f':
+                                FruitItem ft = new FruitItem();
+                                iv.addItem(ft.addItem());
+                                break;
+                            case 'v':
+                                Vegetables veg = new Vegetables();
+                                iv.addItem(veg.addItem());
+                                break;
+                            case 's':
+                                Sweeteners se = new Sweeteners();
+                                iv.addItem((Sweeteners) se.addItem());
+                                break;
+                            case 'p':
+                                Preserve pe = new Preserve();
+                                iv.addItem((Preserve) pe.addItem());
+                                break;
+                            default:
+                                break;
+                        }
+                    } else {
+                        System.out.println("Invalid");
+                    }
                     break;
                 case 2:
                     iv.print();

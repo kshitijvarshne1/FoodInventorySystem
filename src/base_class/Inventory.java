@@ -43,10 +43,22 @@ public class Inventory {
         System.out.println("Enter valid item code: ");
         Scanner sc = new Scanner(System.in);
         int code = sc.nextInt();
-        if (godown.contains(new FruitItem().check(code)) || godown.contains(new Preserve().check(code)) || godown.contains(new Preserve().check(code)) ||
-                godown.contains(new Vegetables().check(code))) {
+        boolean response= false;
+        FoodItem result=null;
+        for (Object o : godown) {
+            if(((FoodItem) o).getItemCode()==code){
+                result=(FoodItem) o;
+                response=true;
+            }
+        }
+
+        System.out.println(response);
+        if (response) {
+            System.out.println("Enter valid quantity to buy: ");
             int quantity = sc.nextInt();
-            if (quantity >= 1) {
+            if (quantity>=1 && ((FoodItem) result).getQuantityInStock()>=quantity){
+                int old= result.getQuantityInStock();
+                result.setQuantityInStock(old-quantity);
                 System.out.println("Item buyed");
             } else {
                 System.out.println("Invalid quantity...\n" +

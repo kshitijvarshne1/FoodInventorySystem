@@ -10,33 +10,24 @@ package base_class;
 import java.util.ArrayList;
 
 public class Inventory {
-    private FruitItem fruitItem;
-    private Vegetables vegetable;
-    private Preserve preserve;
-    private int numItems;
-    ArrayList<FoodItem> godown;
+    ArrayList godown= new ArrayList();
 
-    public Inventory(FruitItem fruitItem) {
-        this.fruitItem = fruitItem;
-        this.numItems= 1;
-    }
-    public Inventory(Vegetables vegetable) {
-        this.vegetable = vegetable;
-        this.numItems= 1;
-    }
-    public Inventory(Preserve preserve) {
-        this.preserve= preserve;
-        this.numItems= 1;
-    }
     public Inventory() {
-        this.numItems= 0;
     }
-    public void addItem(FoodItem ft){
-        godown.add(ft);
+    public void addItem(FruitItem f){
+        godown.add(f);
     }
-    public void print(){
-        System.out.println(godown.toString());
+
+    public void addItem(Preserve p){
+        godown.add(p);
     }
+    public void addItem(Sweeteners s){
+        godown.add(s);
+    }
+    public void addItem(Vegetables v){
+        godown.add(v);
+    }
+
 
 }
 

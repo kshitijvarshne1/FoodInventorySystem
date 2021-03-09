@@ -26,9 +26,7 @@ public class Main {
                     switch (choice) {
                         case 'f':
                             FruitItem ft = new FruitItem();
-                            ft.addItem().toString();
-
-                            //iv.addItem(ft.addItem());
+                            iv.addItem(ft.addItem());
                             break;
                         case 'v':
                             Vegetables veg = new Vegetables();

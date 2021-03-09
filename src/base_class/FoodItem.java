@@ -95,16 +95,16 @@ public class FoodItem {
     public FoodItem addItem(){
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the code for the item: ");
-         this.itemCode = sc.nextInt();
+         int itemCode = sc.nextInt();
         System.out.println("Enter the name for the item: ");
-        this.itemName = sc.next();
+        String itemName = sc.next();
         System.out.println("Enter the quantity for the item: ");
-        this.quantityInStock= sc.nextInt();
+        int quantityInStock= sc.nextInt();
         System.out.println("Enter the cost of the item: ");
-        this.itemCost = sc.nextInt();
+        int itemCost = sc.nextInt();
         System.out.println("Enter the sales price of the item: ");
-        this.itemPrice= sc.nextInt();
-        FoodItem obj = new FoodItem(this.getItemCode(),this.getItemName(),this.itemPrice,this.quantityInStock,this.itemCost);
+        int itemPrice= sc.nextInt();
+        FoodItem obj = new FoodItem(itemCode,itemName,itemPrice,quantityInStock,itemCost);
         return obj;
     }
 }

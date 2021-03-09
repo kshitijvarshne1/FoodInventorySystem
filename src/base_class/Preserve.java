@@ -34,7 +34,7 @@ public class Preserve extends FoodItem {
 
     @Override
     public String toString() {
-        return super.toString()+"Preserve{" +
+        return super.toString()+" Preserve{" +
                 "jarSize=" + jarSize +
                 '}';
     }

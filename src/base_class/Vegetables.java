@@ -35,7 +35,7 @@ public class Vegetables extends FoodItem {
 
     @Override
     public String toString() {
-        return super.toString()+ "Vegetables{" +
+        return super.toString()+ " Vegetables{" +
                 "farmName='" + farmName + '\'' +
                 '}';
     }

@@ -7,14 +7,14 @@
 
 package base_class;
 
+import java.util.ArrayList;
+
 public class Inventory {
-    private FoodItem foodProduct;
+    private FruitItem fruitItem;
+    private Vegetables vegetable;
+    private Preserve preserve;
     private int numItems;
 
-    public Inventory(FoodItem foodProduct, int numItems) {
-        this.foodProduct = foodProduct;
-        this.numItems = numItems;
-    }
 
     @Override
     public String toString() {
@@ -23,6 +23,8 @@ public class Inventory {
                 ", numItems=" + numItems +
                 '}';
     }
+    public void addItem(){
 
+    }
 }
 

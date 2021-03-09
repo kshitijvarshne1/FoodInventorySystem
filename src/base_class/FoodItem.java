@@ -9,6 +9,7 @@ package base_class;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class FoodItem {
     private int itemCode;
@@ -17,13 +18,21 @@ public class FoodItem {
     private int quantityInStock;
     private float itemCost;
 
-    public FoodItem() {
+    public FoodItem(int itemCode, String itemName, float itemPrice, int quantityInStock, float itemCost) {
         this.itemCode = itemCode;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.quantityInStock = quantityInStock;
         this.itemCost = itemCost;
     }
+    public FoodItem() {
+        this.itemCode = 0;
+        this.itemName = null;
+        this.itemPrice = 0;
+        this.quantityInStock = 0;
+        this.itemCost = 0;
+    }
+
 
     public int getItemCode() {
         return itemCode;
@@ -83,15 +92,20 @@ public class FoodItem {
         FoodItem foodItem = (FoodItem) o;
         return getItemCode() == foodItem.getItemCode() && Float.compare(foodItem.getItemPrice(), getItemPrice()) == 0 && getQuantityInStock() == foodItem.getQuantityInStock() && Float.compare(foodItem.getItemCost(), getItemCost()) == 0 && Objects.equals(getItemName(), foodItem.getItemName());
     }
-    public boolean addItem(FoodItem foodItem){
-        ArrayList<FoodItem> fooditems = new ArrayList<>();
-        if(fooditems.contains(foodItem)){
-            return false;
-        }
-        else{
-            fooditems.add(foodItem);
-            return true;
-        }
+    public FoodItem addItem(){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the code for the item: ");
+        int code = sc.nextInt();
+        System.out.println("Enter the name for the item: ");
+        String name = sc.next();
+        System.out.println("Enter the quantity for the item: ");
+        int quantity= sc.nextInt();
+        System.out.println("Enter the cost of the item: ");
+        int cost = sc.nextInt();
+        System.out.println("Enter the sales price of the item: ");
+        int salePrice = sc.nextInt();
+        FoodItem obj = new FoodItem(code,name,quantity,code,salePrice);
+        return obj;
     }
 }
 

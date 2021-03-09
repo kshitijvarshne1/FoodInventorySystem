@@ -60,6 +60,7 @@ public class Main {
                     iv.buyItem();
                     break;
                 case 4:
+                    iv.sellitem();
                     break;
                 case 5:
                     iv.printLL();

@@ -7,6 +7,7 @@
 
 package base_class;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Preserve extends FoodItem {
@@ -45,9 +46,19 @@ public class Preserve extends FoodItem {
         Preserve p = new Preserve(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.getJarSize());
         return p;
     }
-    public boolean check(int code){
-        return super.getItemCode()==code;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Preserve preserve = (Preserve) o;
+        return getJarSize() == preserve.getJarSize();
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getJarSize());
+    }
 }
 

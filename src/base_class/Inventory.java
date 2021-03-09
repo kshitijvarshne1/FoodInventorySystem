@@ -43,22 +43,20 @@ public class Inventory {
         System.out.println("Enter valid item code: ");
         Scanner sc = new Scanner(System.in);
         int code = sc.nextInt();
-        boolean response= false;
-        FoodItem result=null;
+        boolean response = false;
+        FoodItem result = null;
         for (Object o : godown) {
-            if(((FoodItem) o).getItemCode()==code){
-                result=(FoodItem) o;
-                response=true;
+            if (((FoodItem) o).getItemCode() == code) {
+                result = (FoodItem) o;
+                response = true;
             }
         }
-
-        System.out.println(response);
         if (response) {
             System.out.println("Enter valid quantity to buy: ");
             int quantity = sc.nextInt();
-            if (quantity>=1 && ((FoodItem) result).getQuantityInStock()>=quantity){
-                int old= result.getQuantityInStock();
-                result.setQuantityInStock(old-quantity);
+            if (quantity >= 1 && result.getQuantityInStock() >= quantity) {
+                int old = result.getQuantityInStock();
+                result.setQuantityInStock(old + quantity);
                 System.out.println("Item buyed");
             } else {
                 System.out.println("Invalid quantity...\n" +
@@ -69,15 +67,48 @@ public class Inventory {
                     "Error...could not buy item");
         }
     }
-    public void printLL(){
+
+    public void printLL() {
         LinkedList ll = new LinkedList();
         for (Object o : godown) {
             ll.add(o);
         }
         for (Object o : ll) {
-            System.out.print(o+" -> ");
+            System.out.print(o + " -> ");
         }
         System.out.println();
+    }
+
+    public void sellitem() {
+        System.out.println("Enter valid item code: ");
+        Scanner sc = new Scanner(System.in);
+        int code = sc.nextInt();
+        boolean response = false;
+        FoodItem result = null;
+        for (Object o : godown) {
+            if (((FoodItem) o).getItemCode() == code) {
+                result = (FoodItem) o;
+                response = true;
+            }
+        }
+        if (response) {
+            System.out.println("Enter valid quantity to sell: ");
+            int quantity = sc.nextInt();
+            if (quantity <= 0) {
+                System.out.println("Invalid quantity...\n" +
+                        "Error...could not sell item");
+            } else if (result.getQuantityInStock() >= quantity) {
+                int old = result.getQuantityInStock();
+                result.setQuantityInStock(old - quantity);
+                System.out.println("Item buyed");
+            } else {
+                System.out.println("Insufficient stock in inventory...\n" +
+                        "Error...could not sell item");
+            }
+        } else {
+            System.out.println("Code not found in inventory...\n" +
+                    "Error...could not buy item");
+        }
     }
 }
 

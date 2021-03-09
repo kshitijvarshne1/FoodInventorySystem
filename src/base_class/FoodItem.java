@@ -84,12 +84,9 @@ public class FoodItem {
                 ", itemCost= $" + itemCost ;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FoodItem foodItem = (FoodItem) o;
-        return getItemCode() == foodItem.getItemCode() && Float.compare(foodItem.getItemPrice(), getItemPrice()) == 0 && getQuantityInStock() == foodItem.getQuantityInStock() && Float.compare(foodItem.getItemCost(), getItemCost()) == 0 && Objects.equals(getItemName(), foodItem.getItemName());
+
+    public boolean equals(int code) {
+        return this.getItemCode()==code;
     }
     public FoodItem addItem(){
         Scanner sc= new Scanner(System.in);
@@ -101,7 +98,7 @@ public class FoodItem {
         int quantityInStock= sc.nextInt();
         System.out.println("Enter the cost of the item: ");
         int itemCost = sc.nextInt();
-        System.out.println("Enter the sales price of the item: ");
+        System.out.println("Enter the sell price of the item: ");
         int itemPrice= sc.nextInt();
         FoodItem obj = new FoodItem(itemCode,itemName,itemPrice,quantityInStock,itemCost);
         return obj;

@@ -27,6 +27,5 @@ public class Vegetables {
         vegetablesGodown.add(vegetable);
         return true;
     }
-
 }
 

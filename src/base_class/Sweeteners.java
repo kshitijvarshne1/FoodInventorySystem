@@ -26,9 +26,7 @@ public class Sweeteners extends FoodItem{
 
     @Override
     public String toString() {
-        return super.toString()+" Sweeteners{" +
-                "foodProcessingPlant='" + foodProcessingPlant + '\'' +
-                '}';
+        return super.toString()+" foodProcessingPlant= " + foodProcessingPlant + " }";
     }
 
     public String getFoodProcessingPlant() {

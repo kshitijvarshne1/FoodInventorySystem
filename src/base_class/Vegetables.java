@@ -7,6 +7,8 @@
 
 package base_class;
 
+import java.util.ArrayList;
+
 public class Vegetables {
     private String farmName;
 
@@ -19,6 +21,11 @@ public class Vegetables {
         return "Vegetables{" +
                 "farmName='" + farmName + '\'' +
                 '}';
+    }
+    public boolean addItem(Vegetables vegetable){
+        ArrayList<Vegetables> vegetablesGodown= new ArrayList<>();
+        vegetablesGodown.add(vegetable);
+        return true;
     }
 
 }

@@ -22,5 +22,14 @@ public class FruitItem {
         OrchardName = orchardName;
     }
 
+    @Override
+    public String toString() {
+        return "FruitItem{" +
+                "OrchardName='" + OrchardName + '\'' +
+                '}';
+    }
+    public void addItem(){
+
+    }
 }
 

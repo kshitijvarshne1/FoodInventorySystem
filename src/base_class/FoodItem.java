@@ -7,6 +7,8 @@
 
 package base_class;
 
+import java.util.Objects;
+
 public class FoodItem {
     private int itemCode;
     private String itemName;
@@ -60,6 +62,25 @@ public class FoodItem {
 
     public void setItemCost(float itemCost) {
         this.itemCost = itemCost;
+    }
+
+    @Override
+    public String toString() {
+        return "FoodItem{" +
+                "itemCode=" + itemCode +
+                ", itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", quantityInStock=" + quantityInStock +
+                ", itemCost=" + itemCost +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FoodItem foodItem = (FoodItem) o;
+        return getItemCode() == foodItem.getItemCode() && Float.compare(foodItem.getItemPrice(), getItemPrice()) == 0 && getQuantityInStock() == foodItem.getQuantityInStock() && Float.compare(foodItem.getItemCost(), getItemCost()) == 0 && Objects.equals(getItemName(), foodItem.getItemName());
     }
 }
 

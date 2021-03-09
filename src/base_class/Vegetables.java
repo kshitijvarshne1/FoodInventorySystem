@@ -8,5 +8,18 @@
 package base_class;
 
 public class Vegetables {
+    private String farmName;
+
+    public Vegetables(String farmName) {
+        this.farmName = farmName;
+    }
+
+    @Override
+    public String toString() {
+        return "Vegetables{" +
+                "farmName='" + farmName + '\'' +
+                '}';
+    }
+
 }
 

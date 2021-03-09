@@ -27,7 +27,11 @@ public class Inventory {
     public void addItem(Vegetables v){
         godown.add(v);
     }
-
+    public void print(){
+        for (Object o : godown) {
+            System.out.println(o);
+        }
+    }
 
 }
 

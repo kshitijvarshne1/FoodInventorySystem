@@ -8,37 +8,36 @@
 package base_class;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class FruitItem extends FoodItem {
-    private String OrchardName;
+    private String orchardname;
 
-    public FruitItem(String orchardName) {
-        super();
-        OrchardName = orchardName;
+    public FruitItem(int itemCode, String itemName, float itemPrice, int quantityInStock, float itemCost, String orchardname) {
+        super(itemCode, itemName, itemPrice, quantityInStock, itemCost);
+        this.orchardname = orchardname;
     }
 
-    public String getOrchardName() {
-        return OrchardName;
+    public FruitItem(String orchardname) {
+        this.orchardname = orchardname;
+    }
+    public FruitItem() {
+        this.orchardname = null;
     }
 
-    public void setOrchardName(String orchardName) {
-        OrchardName = orchardName;
+    public String getOrchardname() {
+        return orchardname;
     }
 
-    @Override
-    public String toString() {
-        return "FruitItem{" +
-                "OrchardName='" + OrchardName + '\'' +
-                '}';
+    public void setOrchardname(String orchardname) {
+        this.orchardname = orchardname;
     }
-    public boolean addItem(FruitItem fruitItem){
-        ArrayList<FruitItem> fruititems = new ArrayList<>();
-        if(fruititems.contains(fruitItem)){
-            return false;
-        }
-        else{
-            fruititems.add(fruitItem);
-            return true;
-        }
+    public FruitItem addItem(){
+        FoodItem obj =super.addItem();
+        System.out.println("Enter the name of the orchard supplier: ");
+        Scanner sc= new Scanner(System.in);
+        String orchard = sc.nextLine();
+        FruitItem ftBucket = new FruitItem(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),orchard);
+        return ftBucket;
     }
 }

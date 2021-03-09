@@ -35,9 +35,7 @@ public class Vegetables extends FoodItem {
 
     @Override
     public String toString() {
-        return super.toString()+ " Vegetables{" +
-                "farmName='" + farmName + '\'' +
-                '}';
+        return super.toString()+ " farmName= " + farmName + " }";
     }
     public Vegetables addItem(){
         FoodItem obj =super.addItem();

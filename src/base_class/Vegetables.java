@@ -8,11 +8,28 @@
 package base_class;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Vegetables {
+public class Vegetables extends FoodItem {
     private String farmName;
 
+    public Vegetables(int itemCode, String itemName, float itemPrice, int quantityInStock, float itemCost, String farmName) {
+        super(itemCode, itemName, itemPrice, quantityInStock, itemCost);
+        this.farmName = farmName;
+    }
+
     public Vegetables(String farmName) {
+        this.farmName = farmName;
+    }
+    public Vegetables() {
+        this.farmName = null;
+    }
+
+    public String getFarmName() {
+        return farmName;
+    }
+
+    public void setFarmName(String farmName) {
         this.farmName = farmName;
     }
 
@@ -22,15 +39,14 @@ public class Vegetables {
                 "farmName='" + farmName + '\'' +
                 '}';
     }
-    public boolean addItem(Vegetables vegetable){
-        ArrayList<Vegetables> vegetablesGodown= new ArrayList<>();
-        if(vegetablesGodown.contains(vegetable)){
-            return false;
-        }
-        else{
-            vegetablesGodown.add(vegetable);
-            return true;
-        }
+    public Vegetables addItem(){
+        FoodItem obj =super.addItem();
+        System.out.println("Enter the name of the farm supplier: ");
+        Scanner sc= new Scanner(System.in);
+        String name = sc.nextLine();
+        Vegetables vegBucket = new Vegetables(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),name);
+        return vegBucket;
     }
+
 }
 

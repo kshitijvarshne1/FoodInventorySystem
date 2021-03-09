@@ -14,17 +14,29 @@ public class Inventory {
     private Vegetables vegetable;
     private Preserve preserve;
     private int numItems;
+    ArrayList<FoodItem> godown;
 
-
-    @Override
-    public String toString() {
-        return "Inventory{" +
-                "foodProduct=" + foodProduct +
-                ", numItems=" + numItems +
-                '}';
+    public Inventory(FruitItem fruitItem) {
+        this.fruitItem = fruitItem;
+        this.numItems= 1;
     }
-    public void addItem(){
-
+    public Inventory(Vegetables vegetable) {
+        this.vegetable = vegetable;
+        this.numItems= 1;
     }
+    public Inventory(Preserve preserve) {
+        this.preserve= preserve;
+        this.numItems= 1;
+    }
+    public Inventory() {
+        this.numItems= 0;
+    }
+    public void addItem(FoodItem ft){
+        godown.add(ft);
+    }
+    public void print(){
+        System.out.println(godown.toString());
+    }
+
 }
 

@@ -7,10 +7,9 @@
 
 package main_class;
 
-import base_class.FoodItem;
-import base_class.FruitItem;
-import base_class.Vegetables;
+import base_class.*;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -18,31 +17,46 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         show();
         int input = sc.nextInt();
-        while (input != 6) {
+        Inventory iv = new Inventory();
+        while (true) {
             switch (input) {
                 case 1:
-                    System.out.println("Do you wish to add a fruit(f), vegetable(v) or a preserve(p) ?");
+                    System.out.println("Do you wish to add a fruit(f), vegetable(v), sweeteners(s) or a preserve(p) ?");
                     char choice = sc.next().charAt(0);
                     switch (choice) {
                         case 'f':
-                            FruitItem ft= new FruitItem();
-                            FruitItem resultFruit = ft.addItem();
+                            FruitItem ft = new FruitItem();
+                            ft.addItem().toString();
+
+                            //iv.addItem(ft.addItem());
                             break;
                         case 'v':
                             Vegetables veg = new Vegetables();
-                            Vegetables resultVegetable = veg.addItem();
+                            iv.addItem(veg.addItem());
+                            break;
+                        case 's':
+                            Sweeteners se = new Sweeteners();
+                            iv.addItem(se.addItem());
                             break;
                         case 'p':
+                            Preserve pe = new Preserve();
+                            iv.addItem(pe.addItem());
                             break;
                         default:
                             break;
                     }
+
                     break;
                 case 2:
+                    iv.print();
+                    break;
                 case 3:
                 case 4:
                 case 5:
                 case 6:
+                    System.out.println("Existing.......");
+                    System.exit(0);
+                    break;
                 default:
                     break;
             }

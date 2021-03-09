@@ -35,7 +35,7 @@ public class Vegetables extends FoodItem {
 
     @Override
     public String toString() {
-        return "Vegetables{" +
+        return super.toString()+ "Vegetables{" +
                 "farmName='" + farmName + '\'' +
                 '}';
     }
@@ -43,8 +43,8 @@ public class Vegetables extends FoodItem {
         FoodItem obj =super.addItem();
         System.out.println("Enter the name of the farm supplier: ");
         Scanner sc= new Scanner(System.in);
-        String name = sc.nextLine();
-        Vegetables vegBucket = new Vegetables(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),name);
+        this.farmName = sc.nextLine();
+        Vegetables vegBucket = new Vegetables(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.getFarmName());
         return vegBucket;
     }
 }

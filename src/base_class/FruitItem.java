@@ -32,12 +32,20 @@ public class FruitItem extends FoodItem {
     public void setOrchardname(String orchardname) {
         this.orchardname = orchardname;
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"FruitItem{" +
+                "orchardname='" + orchardname + '\'' +
+                '}';
+    }
+
     public FruitItem addItem(){
         FoodItem obj =super.addItem();
         System.out.println("Enter the name of the orchard supplier: ");
         Scanner sc= new Scanner(System.in);
-        String orchard = sc.nextLine();
-        FruitItem ftBucket = new FruitItem(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),orchard);
+        this.orchardname = sc.nextLine();
+        FruitItem ftBucket = new FruitItem(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.orchardname);
         return ftBucket;
     }
 }

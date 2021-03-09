@@ -34,7 +34,7 @@ public class Preserve extends FoodItem {
 
     @Override
     public String toString() {
-        return "Preserve{" +
+        return super.toString()+"Preserve{" +
                 "jarSize=" + jarSize +
                 '}';
     }
@@ -42,8 +42,8 @@ public class Preserve extends FoodItem {
         FoodItem obj =super.addItem();
         System.out.println("Enter the size of the jar in millilitres: ");
         Scanner sc= new Scanner(System.in);
-        int size = sc.nextInt();
-        Preserve p = new Preserve(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),size);
+        this.jarSize = sc.nextInt();
+        Preserve p = new Preserve(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.getJarSize());
         return p;
     }
 

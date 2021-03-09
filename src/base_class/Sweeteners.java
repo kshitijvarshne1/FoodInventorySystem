@@ -7,6 +7,8 @@
 
 package base_class;
 
+import java.util.Scanner;
+
 public class Sweeteners extends FoodItem{
     private String foodProcessingPlant;
 
@@ -24,7 +26,7 @@ public class Sweeteners extends FoodItem{
 
     @Override
     public String toString() {
-        return "Sweeteners{" +
+        return super.toString()+"Sweeteners{" +
                 "foodProcessingPlant='" + foodProcessingPlant + '\'' +
                 '}';
     }
@@ -37,5 +39,13 @@ public class Sweeteners extends FoodItem{
         this.foodProcessingPlant = foodProcessingPlant;
     }
 
+    public Sweeteners additem(){
+        FoodItem obj =super.addItem();
+        System.out.println("Enter the name of the Food Processing Plant: ");
+        Scanner sc= new Scanner(System.in);
+        this.foodProcessingPlant = sc.nextLine();
+        Sweeteners s = new Sweeteners(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.getFoodProcessingPlant());
+        return s;
+    }
 }
 

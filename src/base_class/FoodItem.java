@@ -7,6 +7,7 @@
 
 package base_class;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class FoodItem {
@@ -16,7 +17,7 @@ public class FoodItem {
     private int quantityInStock;
     private float itemCost;
 
-    public FoodItem(int itemCode, String itemName, float itemPrice, int quantityInStock, float itemCost) {
+    public FoodItem() {
         this.itemCode = itemCode;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
@@ -81,6 +82,16 @@ public class FoodItem {
         if (o == null || getClass() != o.getClass()) return false;
         FoodItem foodItem = (FoodItem) o;
         return getItemCode() == foodItem.getItemCode() && Float.compare(foodItem.getItemPrice(), getItemPrice()) == 0 && getQuantityInStock() == foodItem.getQuantityInStock() && Float.compare(foodItem.getItemCost(), getItemCost()) == 0 && Objects.equals(getItemName(), foodItem.getItemName());
+    }
+    public boolean addItem(FoodItem foodItem){
+        ArrayList<FoodItem> fooditems = new ArrayList<>();
+        if(fooditems.contains(foodItem)){
+            return false;
+        }
+        else{
+            fooditems.add(foodItem);
+            return true;
+        }
     }
 }
 

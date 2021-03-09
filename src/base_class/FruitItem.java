@@ -7,10 +7,13 @@
 
 package base_class;
 
-public class FruitItem {
+import java.util.ArrayList;
+
+public class FruitItem extends FoodItem {
     private String OrchardName;
 
     public FruitItem(String orchardName) {
+        super();
         OrchardName = orchardName;
     }
 
@@ -28,8 +31,14 @@ public class FruitItem {
                 "OrchardName='" + OrchardName + '\'' +
                 '}';
     }
-    public void addItem(){
-
+    public boolean addItem(FruitItem fruitItem){
+        ArrayList<FruitItem> fruititems = new ArrayList<>();
+        if(fruititems.contains(fruitItem)){
+            return false;
+        }
+        else{
+            fruititems.add(fruitItem);
+            return true;
+        }
     }
 }
-

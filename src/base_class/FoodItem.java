@@ -76,13 +76,12 @@ public class FoodItem {
 
     @Override
     public String toString() {
-        return "FoodItem{" +
+        return "Item{ " +
                 "itemCode=" + itemCode +
-                ", itemName='" + itemName + '\'' +
-                ", itemPrice=" + itemPrice +
+                ", itemName=' &" + itemName + '\'' +
+                ", itemPrice= &" + itemPrice +
                 ", quantityInStock=" + quantityInStock +
-                ", itemCost=" + itemCost +
-                '}';
+                ", itemCost=" + itemCost ;
     }
 
     @Override

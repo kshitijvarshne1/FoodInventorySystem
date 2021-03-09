@@ -24,8 +24,13 @@ public class Vegetables {
     }
     public boolean addItem(Vegetables vegetable){
         ArrayList<Vegetables> vegetablesGodown= new ArrayList<>();
-        vegetablesGodown.add(vegetable);
-        return true;
+        if(vegetablesGodown.contains(vegetable)){
+            return false;
+        }
+        else{
+            vegetablesGodown.add(vegetable);
+            return true;
+        }
     }
 }
 

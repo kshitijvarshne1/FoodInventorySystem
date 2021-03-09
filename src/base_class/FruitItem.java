@@ -46,4 +46,10 @@ public class FruitItem extends FoodItem {
         FruitItem ftBucket = new FruitItem(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.orchardname);
         return ftBucket;
     }
+    public boolean check(int code){
+        return super.getItemCode()==code;
+    }
+
+
+
 }

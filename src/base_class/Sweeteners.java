@@ -45,5 +45,8 @@ public class Sweeteners extends FoodItem{
         Sweeteners s = new Sweeteners(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),this.getFoodProcessingPlant());
         return s;
     }
+    public boolean check(int code){
+        return super.getItemCode()==code;
+    }
 }
 

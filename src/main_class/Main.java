@@ -49,8 +49,13 @@ public class Main {
                     iv.print();
                     break;
                 case 3:
+                    iv.buyItem();
+                    break;
                 case 4:
+                    break;
                 case 5:
+                    iv.printLL();
+                    break;
                 case 6:
                     System.out.println("Existing.......");
                     System.exit(0);

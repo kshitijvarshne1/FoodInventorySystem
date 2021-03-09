@@ -77,11 +77,11 @@ public class FoodItem {
     @Override
     public String toString() {
         return "Item{ " +
-                "itemCode=" + itemCode +
-                ", itemName=' &" + itemName + '\'' +
-                ", itemPrice= &" + itemPrice +
-                ", quantityInStock=" + quantityInStock +
-                ", itemCost=" + itemCost ;
+                "itemCode= " + itemCode +
+                ", itemName= " + itemName + '\'' +
+                ", itemPrice= $" + itemPrice +
+                ", quantityInStock= " + quantityInStock +
+                ", itemCost= $" + itemCost ;
     }
 
     @Override
@@ -106,5 +106,6 @@ public class FoodItem {
         FoodItem obj = new FoodItem(itemCode,itemName,itemPrice,quantityInStock,itemCost);
         return obj;
     }
+
 }
 

@@ -13,5 +13,14 @@ public class FruitItem {
     public FruitItem(String orchardName) {
         OrchardName = orchardName;
     }
+
+    public String getOrchardName() {
+        return OrchardName;
+    }
+
+    public void setOrchardName(String orchardName) {
+        OrchardName = orchardName;
+    }
+
 }
 

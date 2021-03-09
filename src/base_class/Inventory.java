@@ -8,5 +8,21 @@
 package base_class;
 
 public class Inventory {
+    private FoodItem foodProduct;
+    private int numItems;
+
+    public Inventory(FoodItem foodProduct, int numItems) {
+        this.foodProduct = foodProduct;
+        this.numItems = numItems;
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "foodProduct=" + foodProduct +
+                ", numItems=" + numItems +
+                '}';
+    }
+
 }
 

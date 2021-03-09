@@ -34,11 +34,11 @@ public class Main {
                             break;
                         case 's':
                             Sweeteners se = new Sweeteners();
-                            iv.addItem(se.addItem());
+                            iv.addItem((Sweeteners) se.addItem());
                             break;
                         case 'p':
                             Preserve pe = new Preserve();
-                            iv.addItem(pe.addItem());
+                            iv.addItem((Preserve) pe.addItem());
                             break;
                         default:
                             break;

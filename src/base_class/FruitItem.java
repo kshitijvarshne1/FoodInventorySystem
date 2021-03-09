@@ -8,5 +8,10 @@
 package base_class;
 
 public class FruitItem {
+    private String OrchardName;
+
+    public FruitItem(String orchardName) {
+        OrchardName = orchardName;
+    }
 }
 

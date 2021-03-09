@@ -47,6 +47,5 @@ public class Vegetables extends FoodItem {
         Vegetables vegBucket = new Vegetables(obj.getItemCode(),obj.getItemName(),obj.getItemPrice(),obj.getQuantityInStock(),obj.getItemCost(),name);
         return vegBucket;
     }
-
 }
 

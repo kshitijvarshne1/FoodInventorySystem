@@ -47,6 +47,5 @@ public class Vegetables extends FoodItem {
     public boolean check(int code){
         return super.getItemCode()==code;
     }
-
 }
 

@@ -101,6 +101,5 @@ public class FoodItem {
         FoodItem obj = new FoodItem(itemCode,itemName,itemPrice,quantityInStock,itemCost);
         return obj;
     }
-
 }
 

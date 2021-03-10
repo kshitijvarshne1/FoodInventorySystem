@@ -97,6 +97,5 @@ public class Main {
                 "5: Convert ArrayList to Linkedlist and print it.\n" +
                 "6. To Exit");
     }
-
 }
 

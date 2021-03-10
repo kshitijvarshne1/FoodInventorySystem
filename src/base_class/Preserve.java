@@ -59,6 +59,5 @@ public class Preserve extends FoodItem {
     public int hashCode() {
         return Objects.hash(getJarSize());
     }
-
 }
 

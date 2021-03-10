@@ -38,8 +38,7 @@ public class FruitItem extends FoodItem {
         return super.toString()+" orchardname= " + orchardname + " }";
     }
 
-    public FruitItem addItem(){
-        FoodItem obj =super.addItem();
+    public FruitItem addItem(FoodItem obj){
         System.out.println("Enter the name of the orchard supplier: ");
         Scanner sc= new Scanner(System.in);
         this.orchardname = sc.nextLine();

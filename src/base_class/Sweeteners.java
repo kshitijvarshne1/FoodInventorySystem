@@ -37,8 +37,7 @@ public class Sweeteners extends FoodItem{
         this.foodProcessingPlant = foodProcessingPlant;
     }
 
-    public Sweeteners additem(){
-        FoodItem obj =super.addItem();
+    public Sweeteners additem(FoodItem obj){
         System.out.println("Enter the name of the Food Processing Plant: ");
         Scanner sc= new Scanner(System.in);
         this.foodProcessingPlant = sc.nextLine();
@@ -48,5 +47,6 @@ public class Sweeteners extends FoodItem{
     public boolean check(int code){
         return super.getItemCode()==code;
     }
+
 }
 

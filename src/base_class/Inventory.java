@@ -39,6 +39,39 @@ public class Inventory {
         }
     }
 
+    public boolean addInputItem(char check) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the code for the item: ");
+        int itemCode = sc.nextInt();
+        FoodItem result = null;
+        for (Object o : godown) {
+            if (((FoodItem) o).getItemCode() == itemCode) {
+                return false;
+            }
+        }
+        FoodItem ft = new FoodItem();
+        FoodItem fi = ft.addItem(itemCode);
+        if (check == 'f') {
+            FruitItem finalFruit = new FruitItem();
+            addItem(finalFruit.addItem(fi));
+
+        }
+        else if (check == 'v') {
+            Vegetables finalVegetable = new Vegetables();
+            addItem(finalVegetable.addItem(fi));
+
+        } else if(check=='p'){
+            Preserve p= new Preserve();
+            addItem(p.additem(fi));
+        }
+        else{
+            Sweeteners s= new Sweeteners();
+            addItem(s.additem(fi));
+        }
+        return true;
+
+    }
+
     public void buyItem() {
         System.out.println("Enter valid item code: ");
         Scanner sc = new Scanner(System.in);
@@ -110,5 +143,6 @@ public class Inventory {
                     "Error...could not buy item");
         }
     }
+
 }
 

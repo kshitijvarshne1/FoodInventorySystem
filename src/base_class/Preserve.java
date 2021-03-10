@@ -38,8 +38,7 @@ public class Preserve extends FoodItem {
         return super.toString()+
                 " jarSize= " + jarSize+ " ml "+" }";
     }
-    public Preserve additem(){
-        FoodItem obj =super.addItem();
+    public Preserve additem(FoodItem obj){
         System.out.println("Enter the size of the jar in millilitres: ");
         Scanner sc= new Scanner(System.in);
         this.jarSize = sc.nextInt();
@@ -60,5 +59,6 @@ public class Preserve extends FoodItem {
     public int hashCode() {
         return Objects.hash(getJarSize());
     }
+
 }
 

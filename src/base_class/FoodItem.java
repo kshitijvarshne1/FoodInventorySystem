@@ -88,10 +88,8 @@ public class FoodItem {
     public boolean equals(int code) {
         return this.getItemCode()==code;
     }
-    public FoodItem addItem(){
+    public FoodItem addItem(int itemCode){
         Scanner sc= new Scanner(System.in);
-        System.out.println("Enter the code for the item: ");
-         int itemCode = sc.nextInt();
         System.out.println("Enter the name for the item: ");
         String itemName = sc.next();
         System.out.println("Enter the quantity for the item: ");

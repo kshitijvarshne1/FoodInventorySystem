@@ -37,8 +37,7 @@ public class Vegetables extends FoodItem {
     public String toString() {
         return super.toString()+ " farmName= " + farmName + " }";
     }
-    public Vegetables addItem(){
-        FoodItem obj =super.addItem();
+    public Vegetables addItem(FoodItem obj){
         System.out.println("Enter the name of the farm supplier: ");
         Scanner sc= new Scanner(System.in);
         this.farmName = sc.nextLine();
@@ -48,5 +47,6 @@ public class Vegetables extends FoodItem {
     public boolean check(int code){
         return super.getItemCode()==code;
     }
+
 }
 
